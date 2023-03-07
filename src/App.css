@@ -8,7 +8,22 @@
   height: 100vh;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,82,9,1) 47%, rgba(0,212,255,1) 100%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 .flex-items {
   display: block;

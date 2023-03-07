@@ -10,6 +10,7 @@ import Typography from '@mui/joy/Typography';
 import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
 import Box from '@mui/joy/Box';
 import Divider from '@mui/joy/Divider';
+import LoginIcon from '@mui/icons-material/Login';
 
 
 export default function App() {
@@ -31,13 +32,13 @@ export default function App() {
 
   const handleClick = () => {
     // 👇 "message" stores input field value
-    if(workList.includes(message)){
+    if (workList.includes(message)) {
       alert("Task already exists");
     }
-    else{
+    else {
       setUpdated(message);
       setCounter(count => count + 1);
-      setWorkList((preState => [...preState,message]))
+      setWorkList((preState => [...preState, message]))
     }
     // setUpdated(message);
     // setCounter(count => count + 1);
@@ -46,7 +47,7 @@ export default function App() {
     //   <input type="checkbox"></input>
     //   <p>{message}</p>
     //   <Button startIcon={<DeleteIcon />} ></Button>
-      
+
     // </div>));
   };
 
@@ -68,40 +69,41 @@ export default function App() {
   }
 
   const [open, setOpen] = React.useState(false);
-console.log(workList)
-  
+  console.log(workList)
+
   return (
     <>
       <div className="flex-container">
         <div className="flex-items beauty">
           <h1>TO DO LIST APP</h1>
+
           <div>
             <input type="text" placeholder="Add a new task" id="message"
               name="message"
-              onChange={(e)=> setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)}
               value={message} />
-            <Button  disabled={!message} variant="contained"  onClick={(e) => {
+            <Button disabled={!message} variant="contained" onClick={(e) => {
               handleClick();
               setMessage('');
             }}>Add</Button><br></br><br></br>
-            <Button variant="contained" color="error"  onClick={() => {
+            <Button variant="contained" color="error" onClick={() => {
               //handleClickDelete();
               setOpen(true);
             }}>Delete all</Button>
           </div>
           <div className='inbox'>
-          { workList?.map((i, index) =>( 
-          
-            <div className='item'>
-              <input type="checkbox" />
-              <p key={index}>{i}</p> 
-              {/* <DeleteIcon onClick={()=> handleDeleteTest(i)}/> */}
-              <Button startIcon={<DeleteIcon/>}  onClick={()=> handleDeleteTest(i)}  ></Button>
-            </div> 
-           
-           ) )}
+            {workList?.map((i, index) => (
 
-          </div> 
+              <div className='item'>
+                <input type="checkbox" />
+                <p key={index}>{i}</p>
+                {/* <DeleteIcon onClick={()=> handleDeleteTest(i)}/> */}
+                <Button startIcon={<DeleteIcon />} onClick={() => handleDeleteTest(i)}  ></Button>
+              </div>
+
+            ))}
+
+          </div>
         </div>
         <br></br>
       </div>
@@ -126,7 +128,7 @@ console.log(workList)
             <Button variant="plain" color="neutral" onClick={() => setOpen(false)}>
               Cancel
             </Button>
-            <Button variant="contained" color="error" onClick={() =>{ handleClickDelete() ;setOpen(false)}}>
+            <Button variant="contained" color="error" onClick={() => { handleClickDelete(); setOpen(false) }}>
               Discard All Tasks
             </Button>
           </Box>
