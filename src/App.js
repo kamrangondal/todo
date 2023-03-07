@@ -10,7 +10,6 @@ import Typography from '@mui/joy/Typography';
 import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
 import Box from '@mui/joy/Box';
 import Divider from '@mui/joy/Divider';
-import LoginIcon from '@mui/icons-material/Login';
 
 
 export default function App() {
@@ -88,7 +87,12 @@ export default function App() {
             }}>Add</Button><br></br><br></br>
             <Button variant="contained" color="error" onClick={() => {
               //handleClickDelete();
-              setOpen(true);
+              if (workList.length === 0) {
+                alert("No tasks to delete");
+              }
+              else{
+                setOpen(true);
+              }
             }}>Delete all</Button>
           </div>
           <div className='inbox'>
