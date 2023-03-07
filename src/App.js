@@ -85,7 +85,7 @@ console.log(workList)
               setMessage('');
             }}>Add</Button><br></br><br></br>
             <Button variant="contained" color="error"  onClick={() => {
-              handleClickDelete();
+              //handleClickDelete();
               setOpen(true);
             }}>Delete all</Button>
           </div>
