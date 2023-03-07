@@ -127,7 +127,7 @@ export default function App() {
             Confirmation
           </Typography>
           <Divider />
-          <p>Are you sure, you really want to delete all of you tasks?</p>
+          <p>Are you sure, you really want to delete all of your tasks?</p>
           <Box sx={{ display: 'flex', gap: 1, justifyContent: 'flex-end', pt: 2 }}>
             <Button variant="plain" color="neutral" onClick={() => setOpen(false)}>
               Cancel
