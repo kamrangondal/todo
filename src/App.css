@@ -10,6 +10,7 @@
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,82,9,1) 47%, rgba(0,212,255,1) 100%);
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
+
 }
 
 @keyframes gradient {
@@ -53,7 +54,8 @@ input[type=text]:hover{
 
 
 .beauty{
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  background-color: rgba(255, 255, 255, 0.436);
   padding: 50px;
   padding-left: 100px;
   padding-right: 100px;
