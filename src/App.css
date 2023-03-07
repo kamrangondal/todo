@@ -80,7 +80,7 @@ input[type=text]:hover{
 }
 input:checked + p {
   /* background: #F9F9F9; */
-  background: #fff4f4;
+  background: #ffc1c1;
   text-decoration: line-through;
   text-decoration-color: #D32F2F;
 }
