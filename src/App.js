@@ -14,56 +14,28 @@ import Divider from '@mui/joy/Divider';
 
 export default function App() {
 
-  const [counter, setCounter] = useState(0);
-
   const [message, setMessage] = useState('');
-
-  //const [test, setTest] = useState('');
 
   const [updated, setUpdated] = useState(message);
 
   const [workList, setWorkList] = useState([]);
 
-  // const handleChange = (event) => {
-  //   setMessage(event.target.value);
-  //   // setTest(event.target.value);
-  // };
-
   const handleClick = () => {
-    // 👇 "message" stores input field value
     if (workList.includes(message)) {
       alert("Task already exists");
     }
     else {
       setUpdated(message);
-      setCounter(count => count + 1);
       setWorkList((preState => [...preState, message]))
     }
-    // setUpdated(message);
-    // setCounter(count => count + 1);
-    // setWorkList((preState => [...preState,message]))    
-    // setWorkList(workList.concat(<div className='item' key={workList.length}>
-    //   <input type="checkbox"></input>
-    //   <p>{message}</p>
-    //   <Button startIcon={<DeleteIcon />} ></Button>
-
-    // </div>));
   };
 
   const handleClickDelete = () => {
     setWorkList([]);
-    setCounter(count => 0);
   };
-
-  // const deleteSpecific = () => {
-  //   setWorkList([]);
-  //   setCounter(count => count -1);
-  // };
 
   const handleDeleteTest = (item) => {
     console.log(item)
-    //workList.splice(workList.indexOf(item), 1);
-    //setWorkList(workList.splice(workList.indexOf(item), 1));
     setWorkList(workList.filter((i) => i !== item));
   }
 
@@ -75,7 +47,6 @@ export default function App() {
       <div className="flex-container">
         <div className="flex-items beauty">
           <h1>TO DO LIST APP</h1>
-
           <div>
             <input type="text" placeholder="Add a new task" id="message"
               name="message"
@@ -86,11 +57,10 @@ export default function App() {
               setMessage('');
             }}>Add</Button><br></br><br></br>
             <Button variant="contained" color="error" onClick={() => {
-              //handleClickDelete();
               if (workList.length === 0) {
                 alert("No tasks to delete");
               }
-              else{
+              else {
                 setOpen(true);
               }
             }}>Delete all</Button>
@@ -101,7 +71,6 @@ export default function App() {
               <div className='item'>
                 <input type="checkbox" />
                 <p key={index}>{i}</p>
-                {/* <DeleteIcon onClick={()=> handleDeleteTest(i)}/> */}
                 <Button startIcon={<DeleteIcon />} onClick={() => handleDeleteTest(i)}  ></Button>
               </div>
 
